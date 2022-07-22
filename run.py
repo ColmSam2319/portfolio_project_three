@@ -65,3 +65,35 @@ def generate_boards():
     generate_ship_loc(comp)
 
 
+def user_guess():
+    """
+    Get user input on battleship guess
+    """
+    print("Opponent's board")
+    print(f"_" * 35)
+    print_board(user_guesses)
+    repeat = True
+    while repeat:
+        while True:
+            guess_col = input("Enter a column number to fire at: \n")
+            if validation(guess_row):
+                break
+
+        guess_col = int(guess_col)-1
+        guess_row = int(guess_row)-1
+
+        if (user_guesses[guess_row][guess_col] == " * " or
+                user_guesses[guess_row][guess_col] == "X"):
+            print("Already guessed, make another choice")
+        else:
+            repeat = False
+    if comp[guess_row][guess_col] == "o":
+        user_guesses[guess_row][guess_col] = " X "
+        print(f"\n{guess_col+1},{guess_row+1}: HIT!")
+    else:
+        user_guesses[guess_row][guess_col] = " * "
+        print(f"\n{guess_col+1},{guess_row+1}: MISS!")
+
+
+
+
