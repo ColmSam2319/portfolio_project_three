@@ -52,6 +52,16 @@ def welcome_message():
     print(f"Board size: 5*5, Number of Ships: 4")
     name = input(f"Please enter your name: ")
     print(f"Welcome {name}, Generating boards!")
-    
+
+
+def generate_boards():
+    """
+    Creates the necessary boards for the game
+    """
+    make_board(user)
+    make_board(comp)
+    make_board(user_guesses)
+    generate_ship_loc(user)
+    generate_ship_loc(comp)
 
 
