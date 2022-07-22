@@ -42,3 +42,16 @@ def generate_ship_loc(board):
         for row in board:
             ship_num += row.count(" o ")
 
+
+def welcome_message():
+    """
+    Opening message & enter player username
+    """
+    print("_" * 35)
+    print("Welcome to BATTLESHIP")
+    print(f"Board size: 5*5, Number of Ships: 4")
+    name = input(f"Please enter your name: ")
+    print(f"Welcome {name}, Generating boards!")
+    
+
+
