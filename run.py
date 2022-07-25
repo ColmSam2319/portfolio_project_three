@@ -4,7 +4,6 @@ user = []
 user_guesses = []
 comp = []
 
-
 def make_board(board):
     """
     Make an empty 5*5 board
@@ -13,14 +12,12 @@ def make_board(board):
         board.append([" O "]*5)
     return board
 
-
 def print_board(board):
     """
     Print the board
     """
     for ind in board:
         print(" ".join(ind))
-
 
 def random_number(r):
     """
@@ -42,21 +39,20 @@ def generate_ship_loc(board):
         for row in board:
             ship_num += row.count(" o ")
 
-
 def welcome_message():
     """
-    Opening message & enter player username
+    Opening message & enter player's username
     """
     print("_" * 35)
-    print("Welcome to BATTLESHIP")
-    print(f"Board size: 5*5, Number of Ships: 4")
+    print("Welcome to Battleship")
+    print(f"Board Size: 5*5, Number of Ships: 4")
     name = input(f"Please enter your name: ")
     print(f"Welcome {name}, Generating boards!")
 
 
 def generate_boards():
     """
-    Creates the necessary boards for the game
+    Creates the nessecary boards for the game
     """
     make_board(user)
     make_board(comp)
@@ -76,6 +72,10 @@ def user_guess():
     while repeat:
         while True:
             guess_col = input("Enter a column number to fire at: \n")
+            if validation(guess_col):
+                break
+        while True:
+            guess_row = input("Enter a row number to fire at: \n")
             if validation(guess_row):
                 break
 
@@ -83,21 +83,21 @@ def user_guess():
         guess_row = int(guess_row)-1
 
         if (user_guesses[guess_row][guess_col] == " * " or
-                user_guesses[guess_row][guess_col] == "X"):
+                user_guesses[guess_row][guess_col] == " X "):
             print("Already guessed, make another choice")
         else:
             repeat = False
-    if comp[guess_row][guess_col] == "o":
+    if comp[guess_row][guess_col] == " o ":
         user_guesses[guess_row][guess_col] = " X "
-        print(f"\n{guess_col+1},{guess_row+1}: HIT!")
+        print(f"\n{guess_col+1}, {guess_row+1}: HIT!")
     else:
         user_guesses[guess_row][guess_col] = " * "
-        print(f"\n{guess_col+1},{guess_row+1}: MISS!")
+        print(f"\n{guess_col+1}, {guess_row+1}: MISS!")
 
 
 def comp_guess():
     """
-    Computer guess at user board using random generated co-ordinates
+    Computer guess at user board using randomly generate co-ordinates
     """
     print("\n\nComputers turn:")
     repeat = True
@@ -106,7 +106,7 @@ def comp_guess():
     guess_row = random_number(comp)
 
     while repeat:
-        if (user[guess_row][guess_col] == " * " or 
+        if (user[guess_row][guess_col] == " * " or
                 user[guess_row][guess_col] == " X "):
             guess_col = random_number(comp)
             guess_row = random_number(comp)
@@ -119,5 +119,3 @@ def comp_guess():
     else:
         user[guess_row][guess_col] = " * "
         print("MISS")
-    
-
