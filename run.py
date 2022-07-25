@@ -4,7 +4,6 @@ user = []
 user_guesses = []
 comp = []
 
-
 def make_board(board):
     """
     Make an empty 5*5 board
@@ -121,6 +120,7 @@ def comp_guess():
         user[guess_row][guess_col] = " * "
         print("MISS")
 
+
 def validation(value):
     """
     Check inputs are only numbers between 1 and 5
@@ -136,7 +136,8 @@ def validation(value):
         return False
     return True
 
-    def game_play():
+
+def game_play():
     """
     Start the game from here
     """
@@ -159,3 +160,29 @@ def validation(value):
             i = 10
     check_winner_final()
 
+def check_winner(board):
+    """
+    Checks how many hit battleships in the board
+    """
+    total = 0
+    for list in board:
+        total += list.count(" X ")
+    return total
+
+
+def check_winner_final():
+    """
+    Check for a winner after ten turns and report the result to the user
+    """
+    user_result = check_winner(user_guesses)
+    comp_result = check_winner(user)
+    if user_result > comp_result:
+        print("You win!")
+    elif user_result < comp_result:
+        print("Computer wins")
+    else:
+        print("It was a draw!")
+
+
+# Call the main function
+game_play()
