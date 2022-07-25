@@ -44,10 +44,12 @@ Each turn, the user will be select to select a row and a column that will work a
 
 - The grid with the numbers for the rows and the letters for the columns to guide the player in how to select locations. The printing will iterate for the number of columns. The 5 ennemy ships are randomly generated on the grid (but of course not displayed):
 
+
 ![enter-col](Assets/images/enter-col.png)
 
 - asks player to input a column number
-(
+
+
 ![enter-row](Assets/images/enter-row.png)
 
 - asks player to enter row number
@@ -75,8 +77,8 @@ Each turn, the user will be select to select a row and a column that will work a
 
 Imagination can go a long way. Battleship, through its variations, is a good display of that. Due to time constraints, I could not implement all the features I wanted to make available for the players. These features may be released in future updates:
 
-- [ ] Add a player grid to display the ships,
-- [ ] Add different ship lengths and allow different directions for ship placement,
+-  Add a player grid to display the ships,
+-  Add different ship lengths and allow different directions for ship placement,
 
 ## Data Model
  
@@ -84,7 +86,7 @@ Imagination can go a long way. Battleship, through its variations, is a good dis
 ## Testing
 
 - PEP8
-    - No problems were identified from [PEP8 Online Check](Assets/images/Testing.png)
+    - No problems were identified from [PEP8 Online Check]
 
 ### User goals
 
@@ -104,7 +106,7 @@ The code is passing the PEP8 linter validation. No errors were identified.
 ### Validator testing
 
 - PEP8
-    - No problems were identified from [PEP8 Online Check](Assets/images/Testing.png)
+    - No problems were identified from [PEP8 Online Check]![testing](Assets/images/Testing.png)
 
 ## Deployment
 
