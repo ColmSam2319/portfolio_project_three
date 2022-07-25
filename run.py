@@ -4,6 +4,7 @@ user = []
 user_guesses = []
 comp = []
 
+
 def make_board(board):
     """
     Make an empty 5*5 board
@@ -119,3 +120,42 @@ def comp_guess():
     else:
         user[guess_row][guess_col] = " * "
         print("MISS")
+
+def validation(value):
+    """
+    Check inputs are only numbers between 1 and 5
+    """
+    try:
+        if int(value) > 5 or int(value) < 1:
+            raise ValueError(
+                "Your shot is out of bounds! Choose a number between 1 and 5"
+            )
+    except ValueError as e:
+        print(f"Invalid {e}, Make another guess")
+        print("Enter a number between 1 and 5")
+        return False
+    return True
+
+    def game_play():
+    """
+    Start the game from here
+    """
+    generate_boards()
+    welcome_message()
+    i = 0
+    while i < 10:
+        print(f"\nThis is turn {i +1}/10 \n")
+        user_guess()
+        print_board(user_guesses)
+        #input("\nPress Enter to continue...")
+        comp_guess()
+        print("\nHere's your board: ")
+        print_board(user)
+        #input("\nPress Enter to continue...")
+        i += 1
+        if check_winner(user) == 4:
+            i = 10
+        elif check_winner(user_guesses) == 4:
+            i = 10
+    check_winner_final()
+
