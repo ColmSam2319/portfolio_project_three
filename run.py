@@ -95,5 +95,29 @@ def user_guess():
         print(f"\n{guess_col+1},{guess_row+1}: MISS!")
 
 
+def comp_guess():
+    """
+    Computer guess at user board using random generated co-ordinates
+    """
+    print("\n\nComputers turn:")
+    repeat = True
 
+    guess_col = random_number(comp)
+    guess_row = random_number(comp)
+
+    while repeat:
+        if (user[guess_row][guess_col] == " * " or 
+                user[guess_row][guess_col] == " X "):
+            guess_col = random_number(comp)
+            guess_row = random_number(comp)
+        else:
+            repeat = False
+    print(f"Computer guessed: {guess_col + 1}, {guess_row + 1}")
+    if user[guess_row][guess_col] == " o ":
+        user[guess_row][guess_col] = " X "
+        print("HIT")
+    else:
+        user[guess_row][guess_col] = " * "
+        print("MISS")
+    
 
