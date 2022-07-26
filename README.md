@@ -42,7 +42,7 @@ Each turn, the user will be select to select a row and a column that will work a
 
 ![intro message](Assets/images/generating-boards.png)
 
-- The grid with the numbers for the rows and the letters for the columns to guide the player in how to select locations. The printing will iterate for the number of columns. The 5 ennemy ships are randomly generated on the grid (but of course not displayed):
+- The grid with the numbers for the rows and the letters for the columns to guide the player in how to select locations. The printing will iterate for the number of columns. The 5 enemy ships are randomly generated on the grid (but of course not displayed):
 
 
 ![enter-col](Assets/images/enter-col.png)
@@ -89,10 +89,28 @@ Imagination can go a long way. Battleship, through its variations, is a good dis
     - No problems were identified from [PEP8 Online Check]
 
 ### User goals
+Users should be able to have the following goals
 
+- On opening the game I should have clear instructions on how the game works.
+- The rules of the game should be explained.
+- The game should tell me how and what co-ordinates I can choose.
+- I should be told if I enter invalid co-ordinates.
+- I should be told if I have already selected those co-ordinates.
+- I should be told how many tries I have left.
+- I should be told the results of each round.
+- At the end of the game I want to be notified of the winner/ looser of the game.
 
 **Goal**                               
-               
+The above user goals are listed the following are the outcomes for the user goals.
+
+- the instructions on who the game works are listed at the start of the game.
+- the rules are also explained at the start of the game.
+- The game informs the user of the number of rows and the number of columns on the play board
+- If an invalid row or colunm number is entered the player will be presented with a invalid data selection messageed and will be asked to re-enter a correct value.
+- after each selection the player will be informed if their attempt was a hit or a miss 
+- after each selection the player will be informed of the computers attempt if it was a hit or a miss.
+- the player will be informed of how many remaining attemptys they have in the game.
+- at the end of the game the player will be notified that this is the end of the game and will be told of the result of the game.
 
 ### Technology
 
@@ -100,8 +118,9 @@ The code is passing the PEP8 linter validation. No errors were identified.
 
 ## Bugs
 
-### Fixed Bugs
-
+### Fixed Bug
+- Board not working for computer (incorect spelling)
+- Error in code to validate player hit.(incorect indenting)
 
 ### Validator testing
 
@@ -122,13 +141,9 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ## Credits
 
-- Several ressources were identified in helping creating the Battleship game. [DioCar84's Battleship project](https://en.wikipedia.org/wiki/Battleship_(game)) of the CodeInstitue was a good source of inspiration for the data model. 
-- Austin Montgomery's [Python for Beginners: Battleship](https://bigmonty12.github.io/battleship) was a step by step guide that helped me throughout fixing some of the bugs I encountered.
-- [CaringTiger's Battleship repo](https://github.com/caringtiger/battleships/blob/master/main.py#L7).
-- [StackOverflow](https://stackoverflow.com/) was a great source for identifiying technical challenges I was facing and for helping to move forward.
-- Quinto's question on [StackOverflow](https://stackoverflow.com/questions/36609140/how-to-make-this-battleship-game-more-user-friendly-in-terms-of-values)
-- [How to Code Battleship in Python - Single Player Game](https://www.youtube.com/watch?v=alJH_c9t4zw) Video
-- [Catching Exceptions With try and except](https://realpython.com/lessons/catching-exceptions-try-except/)
-- My mentor, Ronan. A great help in moving forward and identfying the appropriate resources.
-- My friends Greg and Colm for their support on the final steps of the projet and helping bring some perspective on some of the functions (looking at you `print_game_board_grid()` and `generate_ships()`).
+- Several ressources were identified in helping creating the Battleship game. 
+- code institute love sandwiches was used to form the basic structure of this code.
+- youtube content - https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=124s
+- My good friend Tom who sat with me and helped me review code and assisted me through out this project with out who this project would not have been 
+- My mentor, Martina. Always looking after me with helpful resources and comments.
 - [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)) for the rules and history of the Battleships game
